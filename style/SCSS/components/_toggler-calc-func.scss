@@ -1,0 +1,89 @@
+// botones-toggle-clp-uf
+%toggle-app-button-base {
+  width: 175px;
+  height: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px 0 0 10px;
+  border: none;
+  font-family: $font;
+  font-size: 0.875rem;
+  line-height: 0.875rem;
+  font-weight: 300;
+  color: $light-text-a;
+  transition: .4s all ease;
+
+  &:last-of-type {
+    border-radius: 0 10px 10px 0px;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:active {
+    transform: translateY(-2px);
+  }
+}
+
+.toggle-app-button-light {
+  @extend %toggle-app-button-base;
+  background: $light-container;
+  -webkit-box-shadow: 5.71px 5.71px 9px #E0E8EF, 0px 0px 9px #F6FEFF;
+  box-shadow: 5.71px 5.71px 9px #E0E8EF, 0px 0px 9px #F6FEFF;
+  color: $light-text-a;
+
+  &.button-active {
+    background: $light-container;
+    box-shadow: inset 5.71px 5.71px 9px #E0E8EF, inset -5.71px -5.71px 9px #F6FEFF;
+  }
+
+  &:hover {
+    background: $light-container;
+    box-shadow: inset 5.71px 5.71px 9px #E0E8EF, inset -5.71px -5.71px 9px #F6FEFF;
+  }
+}
+
+.toggle-app-button-dark {
+  @extend %toggle-app-button-base;
+  color: $dark-text-a;
+  background-color: $black;
+  background: $dark-container;
+  -webkit-box-shadow: 5.71px 5.71px 9px $dark-gradient-a, 0px 0px 9px $dark-gradient-b;
+  box-shadow: 5.71px 5.71px 9px $dark-gradient-a, 0px 0px 9px $dark-gradient-b;
+
+  &.button-active {
+    background: $dark-container;
+    box-shadow: inset 5.71px 5.71px 9px $dark-gradient-a, inset -5.71px -5.71px 9px $dark-gradient-b;
+  }
+
+  &:hover {
+    background: $dark-container;
+    box-shadow: inset 5.71px 5.71px 9px $dark-gradient-a, inset -5.71px -5.71px 9px $dark-gradient-b;
+  }
+}
+
+// Mobile - Llamados en _mobile.scss
+@mixin basic-togler-calc-func--sm() {
+
+  .toggle-app-button-light {
+    flex-grow: 1;
+    height: 45px;
+    border-radius: 10px;
+
+    &:last-of-type {
+      border-radius: 10px;
+    }
+  }
+
+  .toggle-app-button-dark {
+    flex-grow: 1;
+    height: 45px;
+    border-radius: 10px;
+
+    &:last-of-type {
+      border-radius: 10px;
+    }
+  }
+}

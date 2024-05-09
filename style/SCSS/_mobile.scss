@@ -1,0 +1,17 @@
+// Large (lg)
+@media screen and (max-width: 992px) {
+    @include typo--lg();
+    @include basic--lg();
+  }
+  
+  // Medium (md)
+  @media screen and (max-width: 768px) {
+    @include basic--md();
+  }
+  
+  // Small (sm)
+  @media screen and (max-width: 576px) {
+    @include typo--sm();
+    @include basic--sm();
+    @include basic-togler-calc-func--sm();
+  }

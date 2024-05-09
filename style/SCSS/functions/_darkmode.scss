@@ -1,0 +1,122 @@
+// light-dark-text
+.lightmode-text-a {
+  color: $light-text-a;
+  transition: .4s all ease;
+}
+
+.darkmode-text-a {
+  color: $dark-text-a;
+  transition: .4s all ease;
+}
+
+.lightmode-text-b {
+  color: $light-text-b;
+  transition: .4s all ease;
+
+  a {
+    color: $light-text-a;
+    transition: .4s all ease;
+  }
+}
+
+.darkmode-text-b {
+  color: $dark-text-b; 
+  transition: .4s all ease;
+
+  a {
+    color: $dark-text-a; 
+    transition: .4s all ease;
+  }
+}
+
+// input-field
+.lightmode-input-field::placeholder {
+  color: $light-text-b;
+  transition: .4s all ease;
+}
+
+.lightmode-input-field[type="text"] {
+  color: $light-text-b;
+}
+
+.darkmode-input-field::placeholder {
+  color: $dark-text-a;
+  transition: .4s all ease;
+}
+
+.darkmode-input-field[type="text"] {
+  color: $dark-text-a;
+}
+
+// light-dark-mode-containers
+.lightmode-containers-a {
+  background: $light-container;
+  box-shadow: 3px 3px 10px $light-shadow;
+  transition: .4s all ease;
+}
+
+.lightmode-containers-b {
+  background: $light-container;
+  -webkit-box-shadow: 12px 12px 24px $light-gradient-a, -12px -12px 24px $light-gradient-b;
+  box-shadow: 12px 12px 24px $light-gradient-a, -12px -12px 24px $light-gradient-b;
+  transition: .4s all ease;
+
+  svg {
+    fill: $light-text-b;
+    transition: .4s all ease;
+  }
+}
+
+.lightmode-containers-c {
+  background: $light-container;
+  box-shadow: inset 5.71px 5.71px 9px $light-gradient-a, inset -5.71px -5.71px 9px $light-gradient-b;
+  transition: .4s all ease;
+}
+
+.darkmode-containers-a {
+  background-color: $dark-container;
+  box-shadow: 3px 3px 10px $dark-shadow;
+  transition: .4s all ease;
+}
+
+.darkmode-containers-b {
+  background: $dark-container;
+  -webkit-box-shadow: 12px 12px 24px $dark-gradient-a, -12px -12px 24px $dark-gradient-b;
+  box-shadow: 12px 12px 24px $dark-gradient-a, -12px -12px 24px $dark-gradient-b;
+  transition: .4s all ease;
+
+  svg {
+    fill: $dark-text-b;
+    transition: .4s all ease;
+  }
+}
+
+.darkmode-containers-c {
+  background: $dark-container;
+  box-shadow: inset 5.71px 5.71px 9px $dark-gradient-a, inset -5.71px -5.71px 9px $dark-gradient-b;
+  transition: .4s all ease;
+}
+
+// Infowrapper
+.info-wrapper-span-light {
+  span {
+    color: $light-text-a;
+  }
+}
+
+.info-wrapper-span-dark {
+  span {
+    color: $dark-text-b;
+  }
+}
+
+// light-dark-mode-bg
+.lightmode-bg {
+  background: $light-bg;
+  transition: .4s all ease;
+}
+
+.darkmode-bg {
+  background-color: $dark-bg;
+  transition: .4s all ease;
+}

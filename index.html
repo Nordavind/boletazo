@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Boletazo | Calcula tu boleta de honorarios</title>
+  <meta name="description" content="Calculadora de boleta de honorarios">
+  <meta name="keywords"
+    content="boleta de honorarios, calculadora de boleta de honorarios, calculadora boleta honorarios">
+  <link rel="icon" href="./img/favico.png" type="image/x-icon">
+  <link rel="shortcut icon" href="./img/favico.png" type="image/x-icon">
+  <!-- CSS -->
+  <link rel="stylesheet" href="./style/style.css">
+  <!-- JS -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script defer src="./js/script.js"></script>
+</head>
+
+<body class="main-bg lightmode-bg">
+  <div class="main-container">
+    <div class="header">
+      <img id="logo-light" class="logo activo" src="./img/boletazo-logo-light.svg" alt="Boletazo Logo">
+      <img id="logo-dark" class="logo" src="./img/boletazo-logo-dark.svg" alt="Boletazo Logo">
+    </div>
+    <div class="main-wrapper lightmode-containers-a">
+      <div class="upper-bar-wrapper">
+        <div class="upper-bar-l">
+          <label class="toggle-light-dark-mode">
+            <input type="checkbox" class="toggle-checkbox">
+            <span class="toggle-thumb">
+              <span class="toggle-light-mode-span">light</span>
+              <span class="toggle-dark-mode-span">dark</span>
+            </span>
+          </label>
+        </div>
+        <div class="upper-bar-r">
+          <button id="toggle-calculadora-peso" class="toggle-app-button-light button-active" onclick="">Pesos
+            Chilenos</button>
+          <button id="toggle-calculadora-uf" class="toggle-app-button-light" onclick="">Unidad de Fomento</button>
+        </div>
+      </div>
+      <div class="calculadora-wrapper">
+        <div class="input-wrapper">
+          <input type="text" inputmode="numeric" id="numeroInput" class="input-field-cls lightmode-containers-c" placeholder="0">
+          <span class="over-input-l lightmode-text-a">13.75%</span>
+          <span id="tipo-moneda-display" class="over-input-r lightmode-text-a">CLP</span>
+        </div>
+        <div class="data-main">
+          <div class="data-wrapper lightmode-containers-b">
+            <h2 class="h2-title lightmode-text-b">Valor Líquido</h2>
+            <div class="data-subwrapper">
+              <span class="data-subwrapper-span lightmode-text-a">Debes hacer la boleta por</span>
+              <div class="data-subwrapper-result">
+                <span id="resultado-liquido" class="number-span lightmode-text-b">$0</span>
+                <div id="capture-liquido" class="capture-button">
+                  <svg width="16" height="18" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17.5 20">
+                    <path
+                      d="M15.25,13.13H7.75a.63.63,0,0,1-.62-.63V2.5a.62.62,0,0,1,.62-.62h5.47l2.66,2.65v8A.64.64,0,0,1,15.25,13.13ZM7.75,15h7.5a2.5,2.5,0,0,0,2.5-2.5v-8A1.88,1.88,0,0,0,17.2,3.2L14.55.55A1.88,1.88,0,0,0,13.23,0H7.75a2.5,2.5,0,0,0-2.5,2.5v10A2.5,2.5,0,0,0,7.75,15Zm-5-10A2.5,2.5,0,0,0,.25,7.5v10A2.5,2.5,0,0,0,2.75,20h7.5a2.5,2.5,0,0,0,2.5-2.5V16.25H10.88V17.5a.64.64,0,0,1-.63.63H2.75a.63.63,0,0,1-.62-.63V7.5a.62.62,0,0,1,.62-.62H4V5Z"
+                      transform="translate(-0.25)"/>
+                  </svg>
+                </div>
+              </div>
+            </div>
+            <div class="data-subwrapper">
+              <span class="data-subwrapper-span lightmode-text-a">Recibirás</span>
+              <span id="numero-base-a" class="number-span lightmode-text-b">$0</span>
+            </div>
+            <div class="data-subwrapper">
+              <span class="data-subwrapper-span lightmode-text-a">Retención:</span>
+              <span id="retencion-liquido" class="number-span-small lightmode-text-b">$0</span>
+            </div>
+          </div>
+          <div class="data-wrapper lightmode-containers-b">
+            <h2 class="h2-title lightmode-text-b">Valor Bruto</h2>
+            <div class="data-subwrapper">
+              <span class="data-subwrapper-span lightmode-text-a">Debes hacer la boleta por</span>
+              <div class="data-subwrapper-result">
+                <span id="numero-base-b" class="number-span lightmode-text-b">$0</span>
+                <div id="capture-bruto" class="capture-button">
+                  <svg width="16" height="18" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17.5 20">
+                    <path
+                      d="M15.25,13.13H7.75a.63.63,0,0,1-.62-.63V2.5a.62.62,0,0,1,.62-.62h5.47l2.66,2.65v8A.64.64,0,0,1,15.25,13.13ZM7.75,15h7.5a2.5,2.5,0,0,0,2.5-2.5v-8A1.88,1.88,0,0,0,17.2,3.2L14.55.55A1.88,1.88,0,0,0,13.23,0H7.75a2.5,2.5,0,0,0-2.5,2.5v10A2.5,2.5,0,0,0,7.75,15Zm-5-10A2.5,2.5,0,0,0,.25,7.5v10A2.5,2.5,0,0,0,2.75,20h7.5a2.5,2.5,0,0,0,2.5-2.5V16.25H10.88V17.5a.64.64,0,0,1-.63.63H2.75a.63.63,0,0,1-.62-.63V7.5a.62.62,0,0,1,.62-.62H4V5Z"
+                      transform="translate(-0.25)"/>
+                    </svg>
+                </div>
+              </div>
+            </div>
+            <div class="data-subwrapper">
+              <span class="data-subwrapper-span lightmode-text-a">Recibirás</span>
+              <span id="resultado-bruto" class="number-span lightmode-text-b">$0</span>
+            </div>
+            <div class="data-subwrapper">
+              <span class="data-subwrapper-span lightmode-text-a">Retención:</span>
+              <span id="retencion-bruto" class="number-span-small lightmode-text-b">$0</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="uf" class="info-wrapper lightmode-containers-b info-wrapper-span-light">
+      </div>
+    </div>
+    <div class="footer"><span class="footer-span lightmode-text-b">Desarrollado por <a href="https://github.com/Nordavind">Cristóbal
+          Maurás</a> ©2024</span></div>
+  </div>
+</body>
+
+</html>

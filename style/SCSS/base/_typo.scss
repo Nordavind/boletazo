@@ -1,0 +1,89 @@
+// typo-base
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap');
+
+// variables-fuentes
+$font: 'Sora', sans-serif;
+
+// base
+html,
+body {
+  font-family: $font;
+  height: 100%;
+}
+
+// typo
+h2 {
+  color: $light-text-b; // modificado con lightmode-containers
+  font-size: 1.6rem;
+  line-height: 1.6rem;
+  font-weight: 700;
+}
+
+span {
+  color: $light-text-a; // modificado con lightmode-containers
+  // font-size: 0.875rem;
+  // line-height: 0.875rem;
+  font-weight: 600;
+
+  &.number-span {
+    font-size: 1.875rem;
+    line-height: 1.875rem;
+    font-weight: 300;
+  }
+
+  &.number-span-small {
+    font-size: 1.3rem;
+    line-height: 1.3rem;
+    font-weight: 300;
+  }
+
+  &.span-deco {
+    text-decoration: underline;
+    font-weight: 300;
+  }
+
+  &.over-input-l {
+    font-size: 0.875rem;
+    font-weight: 300;
+  }
+
+  &.over-input-r {
+    font-size: 0.875rem;
+    font-weight: 300;
+  }
+
+  &.data-subwrapper-span {
+    font-size: 0.875rem;
+    font-weight: 300;
+  }
+
+  &.footer-span {
+    font-size: 0.875rem;
+    letter-spacing: 0.02rem;
+    font-weight: 300;
+  }
+}
+
+// Mobile - Llamados en _mobile.scss
+@mixin typo--lg() {
+  span {
+  
+    &.footer-span {
+      text-align: center;
+    }
+  }
+}
+
+@mixin typo--sm() {
+
+  span {
+    &.number-span {
+      font-size: 1.6rem;
+      line-height: 1.6rem;
+    }
+
+    &.footer-span {
+      line-height: 1.2rem;
+    }
+  }
+}

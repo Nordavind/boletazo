@@ -1,0 +1,80 @@
+// toggler-dark-mode
+.toggle-light-dark-mode {
+  display: inline-block;
+  width: 83px;
+  height: 34px;
+  position: relative;
+  user-select: none;
+}
+
+.toggle-thumb {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $light-container; // fondo inicial
+  box-shadow: inset 5.71px 5.71px 9px $light-gradient-a, inset -5.71px -5.71px 9px $light-gradient-b;
+  border-radius: 40px;
+  transition: .4s all ease;
+  cursor: pointer;
+}
+
+.toggle-light-mode-span,
+.toggle-dark-mode-span {
+  padding: 0 13px;
+  font-size: 0.875rem;
+  font-weight: 300;
+  color: $light-text-a; // color texto modo inicial
+}
+
+.toggle-light-mode-span {
+  padding-left: 38px;
+}
+
+.toggle-checkbox {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.toggle-checkbox:checked+.toggle-thumb .toggle-light-mode-span {
+  display: none;
+}
+
+.toggle-checkbox:not(:checked)+.toggle-thumb .toggle-dark-mode-span {
+  display: none;
+}
+
+.toggle-thumb:before {
+  content: "";
+  height: 26px;
+  width: 26px;
+  position: absolute;
+  left: 4px;
+  bottom: 3px;
+  border-radius: 50%;
+  background: $light-container; // bullet color inicial
+  box-shadow: 3px 3px 3px #C2C9CF, -2px -2px 5px #f0f8ff;
+  transition: .4s all ease;
+}
+
+.toggle-checkbox:checked+.toggle-thumb:before {
+  transform: translateX(47px);
+  background-color: $dark-container; // bullet color dark
+  box-shadow: 3px 3px 3px $dark-gradient-a, -2px -2px 5px $dark-gradient-b;
+  transition: .4s all ease;
+}
+
+.toggle-checkbox:checked+.toggle-thumb .toggle-dark-mode-span {
+  color: $dark-text-a; // color texto modo dark
+}
+
+.toggle-checkbox:checked+.toggle-thumb {
+  background-color: $dark-container; // fondo dark
+  box-shadow: inset 5.71px 5.71px 9px $dark-gradient-a, inset -5.71px -5.71px 9px $dark-gradient-b;
+  transition: .4s all ease;
+}

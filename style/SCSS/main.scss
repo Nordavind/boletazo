@@ -1,0 +1,10 @@
+// sass --watch style/scss/main.scss style/style.css --style=compressed
+
+@import 'utilities/variables';
+@import 'base/reset';
+@import 'base/typo';
+@import 'base/basic';
+@import 'components/toggler-calc-func';
+@import 'components/toggler-dm';
+@import 'functions/darkmode';
+@import 'mobile';

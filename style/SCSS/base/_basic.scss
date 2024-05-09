@@ -1,0 +1,259 @@
+// main-bg & main-conainer
+.main-bg {
+  background: $light-bg ; // modificado con lightmode-bg
+}
+
+.main-container {
+  width: 100%;
+  height: 100%;
+  padding: 60px 30px 30px 30px;
+}
+
+.main-wrapper {
+  margin: auto;
+  max-width: 1165px;
+  padding: 40px;
+  background: $light-container; // modificado con lightmode-containers-a
+  box-shadow: 3px 3px 10px $light-shadow; // modificado con lightmode-containers-a
+  border-radius: 30px;
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 40px;
+}
+
+// Header
+.header {
+  margin: auto;
+  max-width: 1165px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0 30px 30px 30px;
+}
+
+.logo {
+  width: 280px;
+  height: auto;
+  display: none;
+
+  &.activo {
+    display: block;
+  }
+}
+
+// sub-header
+.upper-bar-wrapper {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.upper-bar-r {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+// wrapper-calculadora
+.calculadora-wrapper {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 40px;
+}
+
+// input-calculadora
+.input-wrapper {
+  width: 100%;
+  position: relative;
+}
+
+.input-field-cls {
+  width: 100%;
+  height: 52px;
+  padding: 10px 0 10px 0;
+  border: none;
+  background: $light-container; // modificado con lightmode-containers-c
+  box-shadow: inset 5.71px 5.71px 9px $light-gradient-a, inset -5.71px -5.71px 9px $light-gradient-b; // modificado con lightmode-containers-c
+  border-radius: 10px;
+  font-size: 1.3rem;
+  line-height: 1.3rem;
+  font-weight: 300;
+}
+
+.input-field-cls::placeholder {
+  color: $light-text-a;
+}
+
+.input-field-cls[type="text"] {
+  color: $light-text-a;
+  font-family: $font;
+  padding-left: 80px; // padding placeholder y number.
+}
+
+.input-field-cls[type="text"]::-webkit-inner-spin-button,
+.input-field-cls[type="text"]::-webkit-outer-spin-button {
+  -webkit-appearance: none; // para navegadores webkit (chrome, safari)
+  appearance: none; // para otros navegadores
+}
+
+.over-input-l {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 20px;
+}
+
+.over-input-r {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: auto;
+  right: 20px;
+}
+
+.input-field-cls[type="text"]:focus {
+  outline: none;
+}
+
+// data-wrappers
+.data-main {
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 40px;
+}
+
+.data-wrapper {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 20px;
+  width: 50%;
+  padding: 40px;
+  background: $light-container; // modificado con lightmode-containers-b
+  -webkit-box-shadow: 12px 12px 24px $light-gradient-a, -12px -12px 24px $light-gradient-b; // modificado con lightmode-containers-b
+  box-shadow: 12px 12px 24px $light-gradient-a, -12px -12px 24px $light-gradient-b; // modificado con lightmode-containers-b
+  border-radius: 10px;
+}
+
+.data-subwrapper {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 10px;
+}
+
+.data-subwrapper-result {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.capture-button {
+  cursor: pointer;
+}
+
+.capture-button svg {
+  fill: $light-text-b; // modificado con lightmode-containers-b
+}
+
+.info-wrapper {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 40px 20px 40px;
+  width: 100%;
+  height: auto;
+  background: $light-container; // modificado con lightmode-containers-b
+  -webkit-box-shadow: 12px 12px 24px $light-gradient-a, -12px -12px 24px $light-gradient-b; // modificado con lightmode-containers-b
+  box-shadow: 12px 12px 24px $light-gradient-a, -12px -12px 24px $light-gradient-b; // modificado con lightmode-containers-b
+  border-radius: 10px;
+}
+
+.info-wrapper span {
+  font-size: 0.875rem;
+  line-height: 0.875rem;
+  font-weight: 300;
+  text-align: center;
+}
+
+// footer
+.footer {
+  margin: auto;
+  max-width: 1165px;
+  padding: 30px;
+  display: flex;
+  justify-content: flex-end;
+
+  & a {
+    color: $light-text-a;
+    font-weight: 600;
+    text-decoration: none;
+  }
+}
+
+
+// Mobile - Llamados en _mobile.scss
+@mixin basic--lg() {
+  .main-container {
+    padding: 40px 30px 30px 30px;
+  }
+
+  .header {
+    align-items: center;
+    justify-content: center;
+  }
+
+  .footer {
+    justify-content: center;
+  }
+}
+
+@mixin basic--md() {
+  .main-container {
+    padding: 40px 20px 30px 20px;
+  }
+
+  .logo {
+    width: 250px;
+  }
+}
+
+@mixin basic--sm() {
+  .main-wrapper {
+    margin: auto;
+    max-width: 1165px;
+    padding: 30px;
+    gap: 40px;
+  }
+
+  .upper-bar-wrapper {
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .upper-bar-r {
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .data-main {
+    flex-flow: column nowrap;
+    gap: 40px;
+  }
+  
+  .data-wrapper {
+    width: 100%;
+    padding: 30px;
+  }
+
+  .info-wrapper span {
+    line-height: 1.2rem;
+  }
+}
